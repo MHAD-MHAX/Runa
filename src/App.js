@@ -4,7 +4,7 @@ import "./App.css";
 import { Link } from "react-router-dom";
 
 import Image1 from "./images/OF_Logo.png";
-import Image2 from "./images/Profile.jpg";
+import Image2 from "./images/Profile3.jpg";
 
 function App() {
   const [timeLeft, setTimeLeft] = useState(600); // Initial countdown time: 10 minutes
