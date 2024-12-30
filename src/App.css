@@ -1,0 +1,126 @@
+body {
+  background-image: url('./images/Homepage2.jpg'); /* Replace 'your-image.jpg' with the URL/path of your image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image horizontally and vertically */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Makes sure the body is at least 100% of the viewport height */
+  margin: 0; /* Removes default margins */
+  overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+.profile-container {
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  
+}
+
+.time {
+  font-size: 16px;
+}
+
+.status-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-content {
+  margin-top: 20px;
+}
+
+.profile-image {
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 30px;
+  margin: 10px 0;
+  color: white;
+}
+
+.username {
+  font-size: 16px;
+  color: #fff;
+}
+
+.location {
+  font-size: 20px;
+}
+
+.bio {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #fff;
+}
+
+
+.emo2{
+  float: right;
+  width: 20px;
+  height:20px;
+  image-rendering: auto;
+}
+.message-button {
+  background-color: #ff007f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(255, 0, 127, 0.4); /* Add box shadow */
+}
+
+.message-button:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(255, 0, 127, 0.6); /* Enhance shadow on hover */
+}
+
+.message-button2 {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4); /* Blue shadow */
+}
+
+.message-button2:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6); /* Enhance shadow on hover */
+}
+
+
+
+.offer {
+  font-size: 14px;
+  color: #ff007a;
+}
+
+.emo{
+  padding-top: 5px;
+  padding-right: 5px;
+  width: 14px;
+  height:14px;
+  image-rendering: auto;
+
+}
