@@ -42,9 +42,7 @@ function App() {
 
   return (
     <div className="profile-container">
-       <a href="https://onlyfans.com/ladynattasha/c1">
-      <img className="emo2" src={Image1}/>
-        </a>
+     
         <br></br>
         <br></br>
         <br></br>
