@@ -63,7 +63,7 @@ body {
 }
 
 .bio {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   margin: 15px 0;
   color: #fff;
@@ -83,6 +83,7 @@ body {
   border-radius: 25px;
   padding: 12px 20px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(255, 0, 127, 0.4); /* Add box shadow */
@@ -100,6 +101,7 @@ body {
   border-radius: 25px;
   padding: 12px 20px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4); /* Blue shadow */
