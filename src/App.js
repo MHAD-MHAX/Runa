@@ -45,14 +45,9 @@ function App() {
        <a href="https://onlyfans.com/ladynattasha/c1">
       <img className="emo2" src={Image1}/>
         </a>
-      <div className="header">
-     
-        <div className="status-bar">
-          <span className="signal"></span>
-          <span className="wifi"></span>
-          <span className="battery"></span>
-        </div>
-      </div>
+        <br></br>
+        <br></br>
+        <br></br>
       <div className="profile-content">
         <div className="profile-image">
           <img
@@ -73,9 +68,8 @@ function App() {
           Free trial offer ends in {formatTime(timeLeft)}
         </p>
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        
+     
         <a href="https://t.me/+Tkje7rfQohtiYjYx">
         <button className="message-button2">Become one of my loyal slaves😈</button>
         </a>
