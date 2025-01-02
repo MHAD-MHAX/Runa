@@ -1,11 +1,12 @@
+/* General styles remain unchanged */
 body {
-  background-image: url('./images/Homepage2.jpg'); /* Replace 'your-image.jpg' with the URL/path of your image */
-  background-size: cover; /* Ensures the image covers the entire background */
-  background-position: center; /* Centers the image horizontally and vertically */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  height: 100vh; /* Makes sure the body is at least 100% of the viewport height */
-  margin: 0; /* Removes default margins */
-  overflow: hidden; /* Prevents scrollbars from appearing */
+  background-image: url('./images/Homepage2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
 }
 
 .profile-container {
@@ -21,7 +22,6 @@ body {
   align-items: center;
   padding: 10px 15px;
   color: #fff;
-  
 }
 
 .time {
@@ -45,7 +45,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-object-fit: cover;
+  object-fit: cover;
 }
 
 .name {
@@ -70,13 +70,13 @@ object-fit: cover;
   color: #fff;
 }
 
-
-.emo2{
+.emo2 {
   float: right;
   width: 20px;
-  height:20px;
+  height: 20px;
   image-rendering: auto;
 }
+
 .message-button {
   background-color: #ff007f;
   color: white;
@@ -87,16 +87,16 @@ object-fit: cover;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(255, 0, 127, 0.4); /* Add box shadow */
+  box-shadow: 0 4px 8px rgba(255, 0, 127, 0.4);
 }
 
 .message-button:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
-  box-shadow: 0 6px 12px rgba(255, 0, 127, 0.6); /* Enhance shadow on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 0, 127, 0.6);
 }
 
 .message-button2 {
-  background-color: #007bff; /* Blue color */
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 25px;
@@ -105,15 +105,13 @@ object-fit: cover;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4); /* Blue shadow */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
 }
 
 .message-button2:hover {
-  transform: translateY(-3px); /* Slight lift on hover */
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6); /* Enhance shadow on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6);
 }
-
-
 
 .offer {
   font-size: 15px;
@@ -121,11 +119,94 @@ object-fit: cover;
   color: #ff007a;
 }
 
-.emo{
+.emo {
   padding-top: 5px;
   padding-right: 5px;
   width: 14px;
-  height:14px;
+  height: 14px;
   image-rendering: auto;
+}
 
+/* Responsive adjustments for larger devices */
+@media (min-width: 768px) {
+  body {
+    background-image: url('./images/Homepage2.jpg');
+    background-size: cover;
+  
+   
+    margin: 0;
+    overflow: hidden;
+  }
+
+
+
+  .profile-container {
+    max-width: 600px; /* Expand container */
+    padding: 30px;
+  }
+
+  .header {
+    padding: 20px 30px;
+    font-size: 18px; /* Larger header text */
+  }
+
+  .avatar {
+    width: 150px; /* Increase avatar size */
+    height: 150px;
+  }
+
+  .name {
+    font-size: 36px; /* Larger name text */
+  }
+
+  .bio {
+    font-size: 20px; /* Adjust bio text size */
+  }
+
+  .message-button,
+  .message-button2 {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+
+  .offer {
+    font-size: 17px; /* Adjust offer text size */
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-image: url('./images/IBRAHIM\ IMAGE03.jpg');
+  background-size: cover;
+  
+  
+  }
+
+  .profile-container {
+    max-width: 800px; /* Wider container */
+  }
+
+  .avatar {
+    width: 100px; /* Further increase avatar size */
+    height: 100px;
+  }
+
+  .name {
+    font-size: 22px; /* Bigger text */
+  }
+
+  .bio {
+    font-size: 15px; /* Adjust bio text size for large screens */
+  }
+
+  .message-button,
+  .message-button2 {
+    font-size: 20px;
+    padding: 12px 20px;/* Larger padding */
+  }
+
+  .header {
+    padding: 30px 40px;
+    font-size: 20px;
+  }
 }
