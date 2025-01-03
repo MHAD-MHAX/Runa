@@ -35,17 +35,18 @@ function App() {
       try {
         const response = await fetch("http://ip-api.com/json/");
         const data = await response.json();
-
+  
         if (data.status === "success") {
-          setLocation(`${data.city} ${data.country}`);
+          setLocation(`${data.city}, ${data.country}`);
         } else {
           setLocation("Unable to retrieve location details.");
         }
       } catch (error) {
+        console.error("Error fetching location data:", error); // Log the error to the console
         setLocation("Error fetching location data.");
       }
     };
-
+  
     fetchLocation();
   }, []);
 
