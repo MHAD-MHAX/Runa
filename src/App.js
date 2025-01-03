@@ -1,53 +1,46 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-
 import { Link } from "react-router-dom";
-
 import Image1 from "./images/OF_Logo.png";
 import Image2 from "./images/Final Profile.jpg";
 
 function App() {
-  const [timeLeft, setTimeLeft] = useState(600); // Initial countdown time: 10 minutes
-  const [currentTime, setCurrentTime] = useState(new Date()); // To store the current time
-  const [location, setLocation] = useState("Fetching location..."); // To store the user's location
+  const [timeLeft, setTimeLeft] = useState(600);
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [location, setLocation] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Countdown timer
+  // Location fetch function
+  const fetchLocationData = async () => {
+    try {
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+      setLocation(data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching location:', error);
+      setLoading(false);
+    }
+  };
+
+  // Add useEffect for location fetching
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev === 0 ? 600 : prev - 1)); // Reset to 10 minutes when 0
-    }, 1000);
-
-    return () => clearInterval(timer); // Cleanup timer on unmount
+    fetchLocationData();
   }, []);
 
-  // Dynamic clock
+  // Your existing useEffects for timer and clock
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev === 0 ? 600 : prev - 1));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     const clockInterval = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-
-    return () => clearInterval(clockInterval); // Cleanup clock on unmount
-  }, []);
-
-  // Fetch user location based on IP
-  useEffect(() => {
-    const fetchLocation = async () => {
-      try {
-        const response = await fetch(`http://ip-api.com/json/`);
-        const data = await response.json();
-  
-        if (data.status === "success") {
-          setLocation(`${data.city}, ${data.country}`);
-        } else {
-          setLocation("Unable to retrieve location details.");
-        }
-      } catch (error) {
-        console.error("Error fetching location data:", error); // Log the error to the console
-        setLocation("Error fetching location data.");
-      }
-    };
-  
-    fetchLocation();
+    return () => clearInterval(clockInterval);
   }, []);
 
   const formatTime = (seconds) => {
@@ -74,7 +67,14 @@ function App() {
         </div>
         <h1 className="name">Lady Nattasha🖤</h1>
         <p className="bio"> 🟢Available now  | ⏰I respond in 2 minutes.</p>
-        <p className="location">📍 {location}</p> {/* Display location */}
+        
+        {/* Add location display */}
+        {location && (
+          <p className="bio">
+            📍 {location.city}, {location.country_name}
+          </p>
+        )}
+        
         <p className="bio">
           Say hello to ur new favorite mistress, R u ready for what's coming😈?
         </p>
@@ -99,3 +99,4 @@ function App() {
 }
 
 export default App;
+
