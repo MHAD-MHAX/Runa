@@ -4,11 +4,12 @@ import "./App.css";
 import { Link } from "react-router-dom";
 
 import Image1 from "./images/OF_Logo.png";
-import Image2 from "./images/Profile3.jpg";
+import Image2 from "./images/Final Profile.jpg";
 
 function App() {
   const [timeLeft, setTimeLeft] = useState(600); // Initial countdown time: 10 minutes
   const [currentTime, setCurrentTime] = useState(new Date()); // To store the current time
+  const [location, setLocation] = useState("Fetching location..."); // To store the user's location
 
   // Countdown timer
   useEffect(() => {
@@ -28,6 +29,26 @@ function App() {
     return () => clearInterval(clockInterval); // Cleanup clock on unmount
   }, []);
 
+  // Fetch user location based on IP
+  useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        const response = await fetch("http://ip-api.com/json/");
+        const data = await response.json();
+
+        if (data.status === "success") {
+          setLocation(`${data.city} ${data.country}`);
+        } else {
+          setLocation("Unable to retrieve location details.");
+        }
+      } catch (error) {
+        setLocation("Error fetching location data.");
+      }
+    };
+
+    fetchLocation();
+  }, []);
+
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -42,36 +63,35 @@ function App() {
 
   return (
     <div className="profile-container">
-     
-        <br></br>
-        <br></br>
-        <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="profile-content">
         <div className="profile-image">
-          <img
-            src={Image2}
-            alt="Profile"
-            className="avatar"
-          />
+          <img src={Image2} alt="Profile" className="avatar" />
         </div>
         <h1 className="name">Lady Nattasha🖤</h1>
         <p className="bio"> 🟢Available now  | ⏰I respond in 2 minutes.</p>
+        <p className="location">📍 {location}</p> {/* Display location */}
         <p className="bio">
           Say hello to ur new favorite mistress, R u ready for what's coming😈?
         </p>
+     
         <a href="https://onlyfans.com/ladynattasha/c1">
-        <button className="message-button"><img className="emo" src={Image1}/>Message Me Here</button>
+          <button className="message-button">
+            <img className="emo" src={Image1} alt="Logo" />Message Me Here
+          </button>
         </a>
         <p className="offer">
           Free trial offer ends in {formatTime(timeLeft)}
         </p>
         <br></br>
-        
-     
         <a href="https://t.me/+Tkje7rfQohtiYjYx">
-        <button className="message-button2">Become one of my loyal slaves😈</button>
+          <button className="message-button2">
+            Become one of my loyal slaves😈
+          </button>
         </a>
-
       </div>
     </div>
   );

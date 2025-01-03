@@ -1,6 +1,6 @@
 /* General styles remain unchanged */
 body {
-  background-image: url('./images/Homepage2.jpg');
+  background-image: url('./images/Final2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -59,14 +59,18 @@ body {
   color: #fff;
 }
 
-.location {
-  font-size: 20px;
-}
 
 .bio {
   font-size: 17px;
   font-weight: bold;
   margin: 15px 0;
+  color: #fff;
+}
+
+.location{
+  font-size: 17px;
+  font-weight: bold;
+ margin-bottom: 20px;
   color: #fff;
 }
 
@@ -130,7 +134,7 @@ body {
 /* Responsive adjustments for larger devices */
 @media (min-width: 768px) {
   body {
-    background-image: url('./images/Homepage2.jpg');
+    background-image: url('./images/Final2.jpg');
     background-size: cover;
   
    
@@ -176,8 +180,9 @@ body {
 
 @media (min-width: 1200px) {
   body {
-    background-image: url('./images/IBRAHIM\ IMAGE03.jpg');
-  background-size: cover;
+    background-image: url('./images/Final2.jpg');
+  background-size: contain;
+  background-color: black;
   
   
   }
@@ -197,6 +202,11 @@ body {
 
   .bio {
     font-size: 15px; /* Adjust bio text size for large screens */
+  }
+
+  .location{
+    font-size: 15px;
+    margin-bottom: 20px;
   }
 
   .message-button,
